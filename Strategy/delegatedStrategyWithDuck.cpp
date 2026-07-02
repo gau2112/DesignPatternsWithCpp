@@ -44,6 +44,12 @@ class Duck{
 	FlyBehavior* flybehavior;
 	QuackBehavior* quackbehavior;
 	public:
+	void setflybehavior(FlyBehavior *fb){
+		flybehavior = fb;
+	}
+	void setquackbehavior(QuackBehavior *qb){
+		quackbehavior = qb;
+	}
 	void performfly(){
 		flybehavior->fly();
 	}
@@ -73,7 +79,7 @@ class rubberduck:public Duck{
 	public:
 	rubberduck(){
 		flybehavior = new nofly;
-		quackbehavior = new othersound;
+		quackbehavior = new squeak;
 	}
 	void display() override{
 		cout<<"I am a rubberduck\n";
@@ -84,6 +90,8 @@ int main() {
 	// your code goes here
 	Duck *a = new mallardduck;
 	a->display();
+	a->performfly();
+	a->setflybehavior(new nofly);
 	a->performfly();
 	a->performquack();
 	

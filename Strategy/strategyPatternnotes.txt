@@ -1,0 +1,21 @@
+Here, we build strategy pattern.
+
+Mostly, we try to create a common interface for similar tasks and leave implementation for our specific features
+
+Example - For a Duck, Fly behavior can be interface as all ducks have some fly behavior but their fly behavior is different
+Create interface of FlyBehavior
+
+For each fly behavior, we can have separate implementaiton
+
+
+Now, Duck parent class can have multiple duck children which will inherit from Duck
+
+Each duck will have some flying behavior
+
+Now, for every other duck, we can assign the fly behavior using strategy pattern by including an object of fly behavior using unique_ptr
+
+We will use Has-A and Is-A relationship
+
+When using multiple has A relationship, we can use composition like fly behavior and quack behavior interface.
+
+This pattern is called strategy pattern.

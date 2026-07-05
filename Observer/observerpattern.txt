@@ -1,0 +1,3 @@
+We are trying to implement observer pattern.
+
+Each receiver will register with provider and in return, after event is triggered. The provider will notify the receivers about change in data etc

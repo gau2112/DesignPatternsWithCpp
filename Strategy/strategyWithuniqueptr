@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+class strategy{
+  public:
+  virtual void create()=0;
+  virtual ~strategy() = default;
+};
+
+class st1:public strategy{
+    public:
+    void create() override{
+        cout<<"Creating strategy1 \n";
+    }
+};
+class st2:public strategy{
+    public:
+    void create() override{
+        cout<<"Strategy 2 \n";
+    }
+};
+
+class context{
+    unique_ptr<strategy> ob;
+    public:
+    context(unique_ptr<strategy>&& val ={}){
+        ob = move(val);
+    }
+    void set_strategy(unique_ptr<strategy> &&val){
+        ob = move(val);
+    }
+    void dobusiness(){
+        if(ob){
+            ob->create();
+        }
+        else
+        cout<<"Strategy not set \n";
+    }
+};
+int main() {
+	// your code goes here
+	context test;
+	test.dobusiness();
+	test.set_strategy(make_unique<st2>());
+	test.dobusiness();
+	test.set_strategy(make_unique<st1>());
+	test.dobusiness();
+	context mycontext(make_unique<st1>());
+	mycontext.dobusiness();
+	mycontext.set_strategy(make_unique<st2>());
+	mycontext.dobusiness();
+
+}

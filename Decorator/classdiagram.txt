@@ -1,0 +1,15 @@
+coffee (interface)
+      ^
+      |
+-------------------
+|                 |
+espresso      addons
+                  ^
+                  |
+        ----------------
+        |              |
+      milk          cream
+
+
+Decorator pattern has interface of same interface
+It has both HAS-A and IS-A relationship
